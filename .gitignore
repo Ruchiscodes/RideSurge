@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.test*/
+pytest-cache-files-*/
+catboost_info/
+artifacts/*.joblib
+artifacts/*.cbm
+artifacts/*.png
+data/processed/

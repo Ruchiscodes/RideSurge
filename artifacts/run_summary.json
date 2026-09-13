@@ -1,0 +1,85 @@
+{
+  "eda": {
+    "rows": 6000,
+    "duplicate_rows": 0,
+    "missing_values": 0,
+    "duration_cost_correlation": 0.839474889939022,
+    "zscore_outliers": {
+      "weather_severity": 117,
+      "trip_cost": 103,
+      "ride_duration_min": 94,
+      "distance_km": 93,
+      "surge_multiplier": 49,
+      "demand_supply_ratio": 33,
+      "available_drivers": 16,
+      "demand": 13,
+      "traffic_index": 7,
+      "is_weekend": 0,
+      "hour": 0
+    },
+    "boxcox": {
+      "ride_duration_min": {
+        "lambda": 0.09579402627654786,
+        "skew_before": 1.5494491525058014,
+        "skew_after": 0.00281365674917075
+      },
+      "distance_km": {
+        "lambda": 0.047314808694770956,
+        "skew_before": 1.5947477802064718,
+        "skew_after": -0.00023461288426282262
+      },
+      "demand_supply_ratio": {
+        "lambda": 0.08378306600118089,
+        "skew_before": 0.7653589753698998,
+        "skew_after": -0.003423260910191239
+      },
+      "trip_cost": {
+        "lambda": -0.05459018420652315,
+        "skew_before": 2.001708138720251,
+        "skew_after": -5.4195858271819235e-05
+      }
+    }
+  },
+  "best_grid_model": {
+    "model": "GradientBoosting",
+    "rmse": 2.7803202097673783,
+    "mae": 2.0115695742194664,
+    "r2": 0.9765500603612629,
+    "best_params": "{\"model__max_depth\": 3, \"model__n_estimators\": 200}"
+  },
+  "rmse_reduction_vs_linear_pct": 44.59734281995929,
+  "catboost": {
+    "rmse": 2.7654720139443936,
+    "mae": 1.8591257978361106,
+    "r2": 0.9767998586029434
+  },
+  "top_shap_features": [
+    {
+      "feature": "ride_duration_min",
+      "mean_abs_shap": 8.874348618917304
+    },
+    {
+      "feature": "vehicle_type",
+      "mean_abs_shap": 5.246422956596568
+    },
+    {
+      "feature": "distance_km",
+      "mean_abs_shap": 2.2023342480950374
+    },
+    {
+      "feature": "surge_multiplier",
+      "mean_abs_shap": 1.9529043765934606
+    },
+    {
+      "feature": "demand_supply_ratio",
+      "mean_abs_shap": 1.6947645920867687
+    }
+  ],
+  "revenue": {
+    "flat_profit": 17532.701967456327,
+    "dynamic_profit": 24917.332610955338,
+    "profit_uplift_pct": 42.11918195613056,
+    "assumed_price_elasticity": 1.15,
+    "rides_simulated": 1200
+  }
+}
